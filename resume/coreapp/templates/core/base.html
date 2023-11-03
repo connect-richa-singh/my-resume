@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'core/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <!-- {% block corecss%} -->
+    <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'core/css/core.css' %}"> -->
+    <!-- {% endblock corecss%} -->
+    <style>
+     html, body{
+            height: 100%;
+        }
+
+        a.nav-link:hover{
+            color:darkgoldenrod;
+            background-color: black;
+        }
+        a.nav-link:active {
+            color:black;
+            background-color: #07ff7f;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="border-end border-warning h-100">
+                    <div class="text-center">
+                        <img src="{% static 'core/images/mine.jpg'%} " alt="ProfilePhoto" class="img-fluid rounded-circle mt-5" width="100px" height="100px">
+                        <h3 class="text-white mt-3">Richa Singh</h3>
+                    </div>
+                    <hr class="border-light">
+                    <nav class="nav flex-column text-center">
+                        <a href="/" class="nav-link text-white">Home</a>
+                        <a href="/services" class="nav-link">Services</a>
+                        <a href="/skill" class="nav-link">Skills</a> <!-- Changed "Skill" to "Skills" for consistency -->
+                        <a href="/contact" class="nav-link">Contact</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                
+                {% block content %} {% endblock content  %}
+            </div>
+        </div>
+    </div>
+    
+    
+  <script src="{% static 'core/js/jquery.js' %}"></script>
+  <script src="{% static 'core/js/all.min.js' %}"></script>
+  <script src="{% static 'core/js/bootstrap.js' %}"></script>
+  <script src="{% static 'core/js/popper.js' %}"></script>  
+</body>
+</html>
